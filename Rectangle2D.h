@@ -23,19 +23,18 @@ public:
 
 	Rectangle2D();
 	Rectangle2D(double x, double y, double width, double height);
-	double getleft();
-	double getright();
-	double gettop();
-	double getbottom();
+	const double getleft();
+	const double getright();
+	const double gettop();
+	const double getbottom();
 	
 private:
-	double leftside = x - (.5*width);
-	double rightside = x + (.5*width);
-	double bottom = y - (.5*height);
-	double top = y + (.5*height);
-
 	double x, y;
 	double height, width;
-
+	
+	mutable double leftside;
+	mutable double rightside;
+	mutable double bottom;
+	mutable double top;
 };
 #endif // !Rectangle2D_h
